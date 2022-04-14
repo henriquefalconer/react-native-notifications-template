@@ -1,4 +1,4 @@
-package com.notificationstemplate.newarchitecture.components;
+package com.polijunior.notifications.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

@@ -1,4 +1,4 @@
-package com.notificationstemplate.newarchitecture;
+package com.polijunior.notifications.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.notificationstemplate.BuildConfig;
-import com.notificationstemplate.newarchitecture.components.MainComponentsRegistry;
-import com.notificationstemplate.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.polijunior.notifications.BuildConfig;
+import com.polijunior.notifications.newarchitecture.components.MainComponentsRegistry;
+import com.polijunior.notifications.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

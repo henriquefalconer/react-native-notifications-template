@@ -1,4 +1,4 @@
-package com.notificationstemplate.newarchitecture.modules;
+package com.polijunior.notifications.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

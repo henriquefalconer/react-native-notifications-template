@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "686337295504",
+    "project_id": "my-project-1592942147280",
+    "storage_bucket": "my-project-1592942147280.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686337295504:android:834d101ef1dca3f7e9c415",
+        "android_client_info": {
+          "package_name": "com.polijunior.notifications"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686337295504-c268bqsl5irv9b9kingsqqk70sjmf7ce.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5C9cB6b9qTto0AyPgHHmhVPTe-Iqk6R0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686337295504-c268bqsl5irv9b9kingsqqk70sjmf7ce.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "686337295504-cm0ho1129e97ar5ntffpssdu833ukqek.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.polijunior.motherly"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
