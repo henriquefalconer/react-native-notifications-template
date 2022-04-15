@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import messaging from '@react-native-firebase/messaging';
 import NotificationSetting from 'react-native-open-notification';
 import { useNotification } from 'react-native-internal-notification';
 import { useNavigation } from '@react-navigation/native';
-import { Alert } from 'react-native';
+import { Alert, Image, Platform } from 'react-native';
 
 export const setBackgroundMessageHandler = () => {
   // Register background handler.
@@ -18,7 +18,7 @@ const useNotifications = () => {
 
   const { navigate } = useNavigation();
 
-  const notification = useNotification();
+  const notificationHandler = useNotification();
 
   const saveTokenToDatabase = async (token: string) => {
     // Send token to your API, so that backend can send push notifications to user.
@@ -69,10 +69,26 @@ const useNotifications = () => {
 
       // Code executed via this handler has access to React context and is able to interact with your application (e.g. updating the state or UI).
 
-      notification.showNotification({
-        title: 'New notification',
-        message: JSON.stringify(remoteMessage.data),
-        // icon: <FontAwesome name="check-circle" size={45} />,
+      const { notification } = remoteMessage;
+
+      if (!notification) return;
+
+      const imageUrl =
+        Platform.OS === 'ios'
+          ? (remoteMessage.data?.fcm_options as any)?.image
+          : notification.android?.imageUrl;
+
+      notificationHandler.showNotification({
+        title: notification.title as string,
+        message: notification.body,
+        showingTime: 6000,
+        icon: imageUrl ? (
+          <Image
+            // eslint-disable-next-line react-native/no-inline-styles
+            style={{ width: '100%', height: '100%' }}
+            source={{ uri: imageUrl }}
+          />
+        ) : undefined,
         onPress: () => {
           // Assumes that the notification of type "message" contains a property "type" on its payload that indicates the screen to be opened.
           const screenToNavigate = remoteMessage.data?.type;
