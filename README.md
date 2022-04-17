@@ -10,7 +10,7 @@ Rode o seguinte comando no seu terminal (se tiver utilizando Windows, utilize o 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/henriquefalconer/notificationstemplate/main/install.sh)"
 ```
 
-Em seguida, baixe os arquivos de [configuração do Firebase](GoogleService-Info.plist) e altere o conteúdo de `google-services.json` (**android/app**) e de `GoogleService-Info.plist` (**ios/[nome do projeto]**).
+Em seguida, baixe os arquivos de [configuração do Firebase](https://rnfirebase.io/#2-android-setup) e altere o conteúdo de `google-services.json` (**android/app**) e de `GoogleService-Info.plist` (**ios/[nome do projeto]**).
 
 ## Links utilizados 🔗
 - [Documentação de Cloud Messaging do Firebase](https://rnfirebase.io/messaging/usage)
