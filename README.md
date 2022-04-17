@@ -3,9 +3,14 @@
 Utilizando Firebase Cloud Messaging
 
 ## Como utilizar 👈🏻
-1. Adicionar os arquivos `GoogleService-Info.plist` e `google-services.json`, seguindo os passos [deste guia](http://www2.decom.ufop.br/terralab/saiba-como-implementar-o-servico-de-notificacoes-no-seu-app-react-native-utilizando-a-firebase/).
-2. Alterar nome do projeto (Trocar todas as instâncias de `notificationstemplate` para seu nome do projeto, inclusive dos nomes de seus arquivos)
-3. Alterar o ID do projeto (Trocar todas as instâncias de `com.polijunior.notifications` para seu ID do projeto)
+
+Rode o seguinte comando no seu terminal:
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/henriquefalconer/notificationstemplate/main/install.sh)"
+```
+
+Em seguida, baixe os arquivos de [configuração do Firebase](GoogleService-Info.plist) e altere o conteúdo de `google-services.json` (**android/app**) e de `GoogleService-Info.plist` (**ios/[nome do projeto]**).
 
 ## Links utilizados 🔗
 - [Documentação de Cloud Messaging do Firebase](https://rnfirebase.io/messaging/usage)
