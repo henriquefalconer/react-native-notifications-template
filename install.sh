@@ -9,6 +9,13 @@ TTYBOLD='\033[1;39m'
 TTYRESET='\033[1;0m'
 PREVLINE='\033[1A'
 
+SEDCONFIG='-i'
+
+OS=$(uname)
+if [ $OS = "Darwin" ]; then
+  SEDCONFIG="-i ''"
+fi
+
 # Permite utilizar regex no Git Bash do Windows (ele não aceita o =~).
 regexmatch() {
   if ! printf "$1" | grep -E "$2" >>/dev/null; then
@@ -88,14 +95,14 @@ processtemplate() {
   rm -rf .git
   rm install.sh >/dev/null 2>&1
   if [ $PROJECTNAME != 'notificationstemplate' ]; then
-    LC_ALL=C find . -type f -exec sed -i '' "s/notificationstemplate/$PROJECTNAME/g" {} \;
+    eval "LC_ALL=C find . -type f -exec sed $SEDCONFIG \"s/notificationstemplate/$PROJECTNAME/g\" {} \;"
     for fileType in d f; do
       find . -type $fileType -name 'notificationstemplate*' | while read file; do
         mv $file $( sed -r "s/notificationstemplate/$PROJECTNAME/" <<< $file )
       done
     done
   fi
-  LC_ALL=C find . -type f -exec sed -i '' "s/com.polijunior.notifications/com.polijunior.$PROJECTNAME/g" {} \;
+  eval "LC_ALL=C find . -type f -exec sed $SEDCONFIG \"s/com.polijunior.notifications/com.polijunior.$PROJECTNAME/g\" {} \;"
   endspin "$1"
 }
 
