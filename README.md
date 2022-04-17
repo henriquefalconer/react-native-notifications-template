@@ -4,7 +4,7 @@ Utilizando Firebase Cloud Messaging
 
 ## Como utilizar 👈🏻
 
-Rode o seguinte comando no seu terminal:
+Rode o seguinte comando no seu terminal (se tiver utilizando Windows, utilize o [WSL](https://docs.microsoft.com/pt-br/windows/wsl/install)):
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/henriquefalconer/notificationstemplate/main/install.sh)"
