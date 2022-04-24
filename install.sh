@@ -89,20 +89,28 @@ downloadtemplate() {
   endspin "$1"
 }
 
+changeallinfileoccurances() {
+  eval "LC_ALL=C find . -type f -exec sed $SEDCONFIG \"s/$1/$2/g\" {} \;"
+}
+
+changeallfilenameoccurances() {
+  for fileType in d f; do
+    find . -type $fileType -name "$1*" | while read file; do
+      mv $file $( sed -r "s/$1/$2/" <<< $file )
+    done
+  done
+}
+
 processtemplate() {
   initspin "$1"
   cd $PROJECTNAME
   rm -rf .git
   rm install.sh >/dev/null 2>&1
   if [ $PROJECTNAME != 'notificationstemplate' ]; then
-    eval "LC_ALL=C find . -type f -exec sed $SEDCONFIG \"s/notificationstemplate/$PROJECTNAME/g\" {} \;"
-    for fileType in d f; do
-      find . -type $fileType -name 'notificationstemplate*' | while read file; do
-        mv $file $( sed -r "s/notificationstemplate/$PROJECTNAME/" <<< $file )
-      done
-    done
+    changeallinfileoccurances "notificationstemplate" $PROJECTNAME
+    changeallfilenameoccurances "notificationstemplate" $PROJECTNAME
   fi
-  eval "LC_ALL=C find . -type f -exec sed $SEDCONFIG \"s/com.polijunior.notifications/com.polijunior.$PROJECTNAME/g\" {} \;"
+  changeallinfileoccurances "com.polijunior.notifications" $PROJECTID
   endspin "$1"
 }
 
