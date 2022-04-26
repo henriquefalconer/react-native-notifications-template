@@ -148,4 +148,8 @@ runyarn 'Instalando dependências'
 
 sleep 2
 
-printf "\n${TTYBOLD}Criado novo projeto $PROJECTNAME!$TTYRESET\nPara começar a trabalhar, rode 'cd $PROJECTNAME'\n\n"
+printf "\n${TTYBOLD}Criado novo projeto $PROJECTNAME!$TTYRESET\n"
+
+sleep 1
+
+printf "Para começar a trabalhar, rode 'cd $PROJECTNAME'\n\n"
