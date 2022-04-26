@@ -1,1 +1,4 @@
-export interface User {}
+export interface User {
+  id: string;
+  fcmToken: string;
+}

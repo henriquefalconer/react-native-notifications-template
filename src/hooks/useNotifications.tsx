@@ -5,6 +5,8 @@ import { useNotification } from 'react-native-internal-notification';
 import { useNavigation } from '@react-navigation/native';
 import { Alert, Image, Platform } from 'react-native';
 
+import useAuth from './useAuth';
+
 export const setBackgroundMessageHandler = () => {
   // Register background handler.
   messaging().setBackgroundMessageHandler(async remoteMessage => {
@@ -18,11 +20,15 @@ const useNotifications = () => {
 
   const { navigate } = useNavigation();
 
+  const { setFcmToken } = useAuth();
+
   const notificationHandler = useNotification();
 
   const saveTokenToDatabase = async (token: string) => {
     // Send token to your API, so that backend can send push notifications to user.
     console.log('FCM token:', token);
+
+    setFcmToken(token);
   };
 
   useEffect(() => {
@@ -61,6 +67,8 @@ const useNotifications = () => {
 
     // Listens to changes in token.
     return messaging().onTokenRefresh(saveTokenToDatabase);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [notificationsEnabled]);
 
   useEffect(() => {

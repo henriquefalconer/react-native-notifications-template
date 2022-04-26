@@ -8,6 +8,7 @@ interface UserData {
 }
 
 interface IAuthData extends UserData {
+  setFcmToken: React.Dispatch<React.SetStateAction<string | undefined>>;
   login(email: string, password: string): Promise<void>;
   logout(): void;
 }
@@ -15,26 +16,47 @@ interface IAuthData extends UserData {
 const AuthContext = createContext({} as IAuthData);
 
 export const AuthProvider: React.FC = ({ children }) => {
-  const [userData] = useState({} as UserData);
+  const [fcmToken, setFcmToken] = useState<string>();
+  const [userData, setUserData] = useState({} as UserData);
 
   useEffect(() => {
     const call = async () => {
-      // Se vira ae irmão
+      const { user } = userData ?? {};
+
+      if (fcmToken && user.fcmToken && user.fcmToken !== fcmToken) {
+        // Atualizar o fcmToken do backend:
+        // await api.put(`/users/${user.id}`, { ...user, fcmToken });
+
+        setUserData(data => ({ ...data, user: { ...user, fcmToken } }));
+      }
+    };
+
+    call();
+  }, [userData, fcmToken]);
+
+  useEffect(() => {
+    const call = async () => {
+      // Obter user e token do AsyncStorage, se tiver (salvando com setUserData).
     };
 
     call();
   }, []);
 
   const login = async (_email: string, _password: string) => {
-    // Se vira ae irmão
+    // Faça login do usuário e salve seus dados:
+    // const response = await api.post(`/login`, { email, password });
+    // const { user, token } = response.data;
+    // AsyncStorage.multiSet ...
+    // setUserData({ user, token });
   };
 
   const logout = async () => {
-    // Se vira ae irmão
+    // Faça o logout do usuário (backend deveria alterar o fcmToken do usuário para null, para não enviar mais notificações ao aparelho):
+    // await api.post(`/logout/${user.id}`);
   };
 
   return (
-    <AuthContext.Provider value={{ ...userData, login, logout }}>
+    <AuthContext.Provider value={{ ...userData, setFcmToken, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
