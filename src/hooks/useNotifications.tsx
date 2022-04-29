@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import messaging from '@react-native-firebase/messaging';
-import NotificationSetting from 'react-native-open-notification';
 import { useNotification } from 'react-native-internal-notification';
 import { useNavigation } from '@react-navigation/native';
-import { Alert, Image, Platform } from 'react-native';
+import { Image, Platform } from 'react-native';
 
 import useAuth from './useAuth';
 
@@ -38,15 +37,6 @@ const useNotifications = () => {
 
       if (authStatus === messaging.AuthorizationStatus.AUTHORIZED) {
         setNotificationsEnabled(true);
-      } else {
-        Alert.alert(
-          'Algumas funções do aplicativo podem nāo funcionar corretamente',
-          'Ative a permissāo das notificações nas configurações de seu aparelho',
-          [
-            { text: 'OK', style: 'cancel' },
-            { text: 'Abrir configurações', onPress: NotificationSetting.open },
-          ],
-        );
       }
     };
 

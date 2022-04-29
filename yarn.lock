@@ -5984,11 +5984,6 @@ react-native-internal-notification@^1.0.7:
   resolved "https://registry.yarnpkg.com/react-native-internal-notification/-/react-native-internal-notification-1.0.7.tgz#8fef90170fe3e989a95fc754db440f3d036d1bbe"
   integrity sha512-p8w3+bLZR6eSA1AayjYLsbLWePsrWNCqqnibrZdnQAunTlYHNisp4rPecPtZwhY2jVkRjpLYhhYsvkx+jYjFcQ==
 
-react-native-open-notification@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/react-native-open-notification/-/react-native-open-notification-0.1.4.tgz#20b7c03a1543ce36f3f99ff9924c67eef2688aa9"
-  integrity sha512-TPeFRsao6nDFW5nvBseD6nheRCN1U3poaY90iDzBY1MEEVepClqfEC9Iw0cqj7LYnpDSF8V25fb/SpjEg3HdQQ==
-
 react-native-safe-area-context@^4.2.4:
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-4.2.4.tgz#4df42819759c4d3c74252c8678c2772cfa2271a6"
