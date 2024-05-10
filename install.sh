@@ -85,7 +85,7 @@ endspin() {
 
 downloadtemplate() {
   initspin "$1"
-  git clone 'https://www.github.com/henriquefalconer/notificationstemplate' $PROJECTNAME -q
+  git clone 'https://github.com/henriquefalconer/react-native-notifications-template' $PROJECTNAME -q
   endspin "$1"
 }
 
@@ -110,7 +110,7 @@ processtemplate() {
     changeallinfileoccurances "notificationstemplate" $PROJECTNAME
     changeallfilenameoccurances "notificationstemplate" $PROJECTNAME
   fi
-  changeallinfileoccurances "com.polijunior.notifications" $PROJECTID
+  changeallinfileoccurances "com.orgname.projectname" $PROJECTID
   endspin "$1"
 }
 
@@ -134,7 +134,7 @@ readinput 'Digite o nome do projeto (em minúsculas e sem espaço):' 'notificati
 
 if checkoverwrite $PROJECTNAME; then rm -rf $PROJECTNAME; else exit; fi
 
-readinput "Digite o ID do projeto (com.polijunior.${PROJECTNAME}):" "com.polijunior.${PROJECTNAME}" PROJECTID
+readinput "Digite o ID do projeto (com.orgname.${PROJECTNAME}):" "com.orgname.${PROJECTNAME}" PROJECTID
 
 printf '\n'
 

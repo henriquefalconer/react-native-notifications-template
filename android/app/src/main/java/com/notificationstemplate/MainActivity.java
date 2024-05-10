@@ -1,4 +1,4 @@
-package com.polijunior.notifications;
+package com.orgname.projectname;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

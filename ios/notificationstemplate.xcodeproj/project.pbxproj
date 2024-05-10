@@ -517,7 +517,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.polijunior.notifications;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orgname.projectname;
 				PRODUCT_NAME = notificationstemplate;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -544,7 +544,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.polijunior.notifications;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orgname.projectname;
 				PRODUCT_NAME = notificationstemplate;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

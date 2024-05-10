@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:686337295504:android:834d101ef1dca3f7e9c415",
         "android_client_info": {
-          "package_name": "com.polijunior.notifications"
+          "package_name": "com.orgname.projectname"
         }
       },
       "oauth_client": [
@@ -34,7 +34,7 @@
               "client_id": "686337295504-cm0ho1129e97ar5ntffpssdu833ukqek.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.polijunior.motherly"
+                "bundle_id": "com.orgname.projectname"
               }
             }
           ]
